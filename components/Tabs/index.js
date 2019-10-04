@@ -20,9 +20,9 @@ axios
         })
         return newTopics
     })
-    .then(newTopic => {
+    .then(newTopics => {
         const entryPoint = document.querySelector('.topics')
-        newTopic.forEach(topic => {
+        newTopics.forEach(topic => {
             entryPoint.appendChild(topic);
         })
         
