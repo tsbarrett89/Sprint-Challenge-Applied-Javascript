@@ -14,9 +14,18 @@ axios
         return response;
     })
     .then(response => {
+        let newTopics = response.data.topics.map((topic) => {
+        newTopic = createTopic(topic)
+        return newTopic
+        })
+        return newTopics
+    })
+    .then(newTopic => {
         const entryPoint = document.querySelector('.topics')
-        const newTopic = createTopic(response)
-        entryPoint.appendChild(newTopic)
+        newTopic.forEach(topic => {
+            entryPoint.appendChild(topic);
+        })
+        
     })
 
 
@@ -25,7 +34,7 @@ axios
 
         tab.classList.add('tab')
 
-        tab.textContent = topic.data.topics;
+        tab.textContent = topic;
 
         return tab
     }
