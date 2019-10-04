@@ -19,7 +19,7 @@ function Header() {
     header.appendChild(headerOne)
     header.appendChild(temp)
 
-    header.classList.add('class')
+    header.classList.add('header')
     date.classList.add('date')
     temp.classList.add('temp')
 
